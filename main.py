@@ -20,15 +20,11 @@ image = Image.open('startup.png')
 st.image(image)
 
 
-dataset = pd.read_csv("50_Startups.csv")
+df = pd.read_csv("50_Startups.csv")
 
 # spliting Dataset in Dependent & Independent Variables
-X = dataset.iloc[:, :-1].values
-y = dataset.iloc[:, 4].values
-
-from sklearn.preprocessing import LabelEncoder
-labelencoder = LabelEncoder()
-X[:, 3] = labelencoder.fit_transform(X[:, 3])
+X = df.iloc[:, :-1].values
+y = df.iloc[:, 3].values
 
 
 from sklearn.model_selection import train_test_split
