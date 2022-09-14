@@ -14,17 +14,13 @@ from PIL import Image
 image = Image.open('startup.png') #load image
 st.image(image) # st.image — image widget/placeholder
 
-from PIL import Image
-image = Image.open('startup.png')
-
-st.image(image)
 
 
 df = pd.read_csv("50_Startups.csv")
 
 # spliting Dataset in Dependent & Independent Variables
 X = df.iloc[:, :-1].values
-y = df.iloc[:, 3].values
+y = df.iloc[:,-1].values
 
 
 from sklearn.model_selection import train_test_split
